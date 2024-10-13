@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 /* ROUTE IMPORTS */
 import projectRoutes from "./routes/projectRoutes";
+import taskRoutes from "./routes/taskRoutes";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/projects", projectRoutes);
+app.use("/tasks", taskRoutes);
 
 /* SERVER */
 const port = Number(process.env.PORT) || 3000;
